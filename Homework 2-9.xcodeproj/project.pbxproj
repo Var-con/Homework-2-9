@@ -84,12 +84,10 @@
 		B31B52AD2497FED400E39548 /* Homework 2-9 */ = {
 			isa = PBXGroup;
 			children = (
-				B31B52AE2497FED400E39548 /* AppDelegate.swift */,
-				B31B52B02497FED400E39548 /* SceneDelegate.swift */,
-				B31B52B22497FED400E39548 /* ViewController.swift */,
+				B31B52C924994D9F00E39548 /* SupportingFiles */,
+				B31B52C824994D9000E39548 /* ViewControllers */,
 				B31B52C62499479500E39548 /* Storyboards */,
-				B31B52C22498019500E39548 /* ModelOfAnimation.swift */,
-				B31B52C42499329A00E39548 /* DataManager.swift */,
+				B31B52C724994D8400E39548 /* Models */,
 				B31B52B72497FED700E39548 /* Assets.xcassets */,
 				B31B52BC2497FED700E39548 /* Info.plist */,
 			);
@@ -103,6 +101,32 @@
 				B31B52B92497FED700E39548 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B31B52C724994D8400E39548 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B31B52C22498019500E39548 /* ModelOfAnimation.swift */,
+				B31B52C42499329A00E39548 /* DataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B31B52C824994D9000E39548 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B31B52B22497FED400E39548 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B31B52C924994D9F00E39548 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B31B52AE2497FED400E39548 /* AppDelegate.swift */,
+				B31B52B02497FED400E39548 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
