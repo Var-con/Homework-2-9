@@ -6,15 +6,58 @@
 //  Copyright © 2020 Stanislav Klimov. All rights reserved.
 //
 
-import UIKit
+import Spring
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet var animationView: SpringView!
+    @IBOutlet var animationNameLabel: UILabel!
+    @IBOutlet var animationCurveLabel: UILabel!
+    @IBOutlet var animationForceLabel: UILabel!
+    @IBOutlet var animationDelayLabel: UILabel!
+    @IBOutlet var animationDurationLabel: UILabel!
+    @IBOutlet var animationVelocityLabel: UILabel!
+    
+    var animations = Animation.returnData()
+    var currentAnimationIndex = 0
+    
+    @IBAction func startButton(_ sender: SpringButton) {
+        if currentAnimationIndex != animations.endIndex {
+            animationStart()
+            settingLabels()
+        } else {
+            currentAnimationIndex = 0
+            animationStart()
+            settingLabels()
+        }
     }
+}
 
+extension ViewController {
+    private func animationStart() {
+        let currentAnimation = animations[currentAnimationIndex]
+        animationView.animation = currentAnimation.animationName
+        animationView.curve = currentAnimation.animationCurve
+        animationView.duration = CGFloat(currentAnimation.duration)
+        animationView.delay = CGFloat(currentAnimation.delay)
+        currentAnimationIndex += 1
+        animationView.animate()
+    }
+}
 
+extension ViewController {
+    private func settingLabels() {
+        animationNameLabel.text = "Name: \(animationView.animation)"
+        animationCurveLabel.text = "Curve: \(animationView.curve)"
+        animationDelayLabel.text = "Delay: \(String(format: "%.2f",animationView.delay))"
+        animationForceLabel.text = "Force: \(String(format: "%.2f",animationView.force))"
+        animationDurationLabel.text = "Duration: \(String(format: "%.2f",animationView.duration))"
+        animationVelocityLabel.text = "Velocity: \(String(format: "%.2f",animationView.velocity))"
+    }
+}
+
+extension CGFloat: LosslessStringConvertible {
+    public init?(_ description: String) {
+        self.init()
+    }
 }
 
