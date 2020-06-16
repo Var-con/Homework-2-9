@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var animationDelayLabel: UILabel!
     @IBOutlet var animationDurationLabel: UILabel!
     @IBOutlet var animationVelocityLabel: UILabel!
+    @IBOutlet var actionButtonOutlet: SpringButton!
     
     var animations = Animation.returnData()
     var currentAnimationIndex = 0
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
         if currentAnimationIndex != animations.endIndex {
             animationStart()
             settingLabels()
+            setingButtonName()
         } else {
             currentAnimationIndex = 0
             animationStart()
@@ -41,6 +43,22 @@ extension ViewController {
         animationView.delay = CGFloat(currentAnimation.delay)
         currentAnimationIndex += 1
         animationView.animate()
+        
+    }
+    
+    func setingButtonName() {
+        if currentAnimationIndex != animations.endIndex {
+            actionButtonOutlet.setTitle(
+                animations[currentAnimationIndex].animationName,
+                for: .normal
+            )
+        } else {
+            currentAnimationIndex = 0
+            actionButtonOutlet.setTitle(
+                animations[currentAnimationIndex].animationName,
+                for: .normal
+            )
+        }
     }
 }
 

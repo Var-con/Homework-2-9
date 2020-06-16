@@ -87,14 +87,22 @@
 				B31B52AE2497FED400E39548 /* AppDelegate.swift */,
 				B31B52B02497FED400E39548 /* SceneDelegate.swift */,
 				B31B52B22497FED400E39548 /* ViewController.swift */,
-				B31B52B42497FED400E39548 /* Main.storyboard */,
+				B31B52C62499479500E39548 /* Storyboards */,
 				B31B52C22498019500E39548 /* ModelOfAnimation.swift */,
 				B31B52C42499329A00E39548 /* DataManager.swift */,
 				B31B52B72497FED700E39548 /* Assets.xcassets */,
-				B31B52B92497FED700E39548 /* LaunchScreen.storyboard */,
 				B31B52BC2497FED700E39548 /* Info.plist */,
 			);
 			path = "Homework 2-9";
+			sourceTree = "<group>";
+		};
+		B31B52C62499479500E39548 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B31B52B42497FED400E39548 /* Main.storyboard */,
+				B31B52B92497FED700E39548 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
